@@ -28,11 +28,42 @@
                 margin: 0;
                 transition: 750ms ease-in-out;
             }
+            p {
+                color: #dadada;
+                font-size: calc(1em + 3vmin);
+                position: fixed;
+                bottom: 1rem;
+                right: 1.5rem;
+                margin: 0;
+                text-align: right;
+                text-shadow: -1px -1px 0 #121212, 1px 1px 0 #121212, -1px 1px 0 #121212, 1px -1px 0 #121212;
+            }
+            @media screen and (min-width: 340px) {
+                p {
+                 width: 70%;
+                }
+            }
+            @media screen and (min-width: 560px) {
+                p {
+                 width: 50%;
+                }
+            }
+            @media screen and (min-width: 940px) {
+                p {
+                 width: 30%;
+                }
+            }
+            @media screen and (min-width: 1300px) {
+                p {
+                 width: 25%;
+                }
+            }
         </style>
 
         <div class="background-wrapper">
             <h1 id="visual">404</h1>
         </div>
+        <p>The page you’re looking for does not exist.</p>
 
         <script>
             const visual = document.getElementById("visual");
