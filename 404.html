@@ -1,0 +1,53 @@
+<html style="color-scheme: light dark;">
+    <body>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Eczar:800');
+            @import url('https://fonts.googleapis.com/css?family=Poppins:600');
+            body {
+                font-family: "Poppins";
+                height: 100vh;
+                background: #121212;
+                padding: 1em;
+                overflow: hidden;
+            }
+            .background-wrapper {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                user-select: none;
+            }
+            .background-wrapper h1 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(-25deg);
+                font-family: "Eczar";
+                font-size: 60vmax;
+                color: #282828;
+                letter-spacing: 0.025em;
+                margin: 0;
+                transition: 750ms ease-in-out;
+            }
+        </style>
+
+        <div class="background-wrapper">
+            <h1 id="visual">404</h1>
+        </div>
+
+        <script>
+            const visual = document.getElementById("visual");
+            const events = ['resize', 'load'];
+
+            events.forEach(function(e){
+                window.addEventListener(e, function(){
+                    const width = window.innerWidth
+                    const height = window.innerHeight
+                    const ratio = 45 / (width / height)
+                    visual.style.transform = "translate(-50%, -50%) rotate(-" + ratio + "deg)"
+                });
+            });
+        </script>
+
+    </body>
+</html>
+
